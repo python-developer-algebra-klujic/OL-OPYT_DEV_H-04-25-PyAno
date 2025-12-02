@@ -24,5 +24,10 @@ class Piano(models.Model):
                              default=0,
                              on_delete=models.SET_DEFAULT)
 
+    picture_url = models.CharField(max_length=750,
+                                   null=True,
+                                   blank=True,
+                                   help_text='Upisite link do slike klavira')
+
     def __str__(self):
         return f'{self.model} ({self.category.name})'
