@@ -10,7 +10,7 @@
         {% for piano in pianos %}
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ piano.picture_url }}" class="card-img-top" alt="...">
+                    <img height=200 src="{{ piano.picture_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ piano.model }}</h5>
                         {% if piano.description %}
