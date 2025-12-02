@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 
 from pianos.models.pianos import Piano
 
-# Create your views here.
+
 def list(request):
     pianos = Piano.objects.all()
     return render(request, 'pianos/list.html', {'pianos': pianos})
