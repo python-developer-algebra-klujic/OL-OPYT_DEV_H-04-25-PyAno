@@ -1,5 +1,8 @@
 from django.db import models
 
+from .piano_category import PianoCategory
+from .piano_type import PianoType
+
 
 class Piano(models.Model):
     model = models.CharField(max_length=150,
@@ -10,3 +13,16 @@ class Piano(models.Model):
                                    null=True,
                                    blank=True,
                                    help_text='Opis klavira')
+
+    category = models.ForeignKey(PianoCategory,
+                                 null=False,
+                                 default=0,
+                                 on_delete=models.SET_DEFAULT)
+
+    type = models.ForeignKey(PianoType,
+                             null=False,
+                             default=0,
+                             on_delete=models.SET_DEFAULT)
+
+    def __str__(self):
+        return f'{self.model} ({self.category.name})'

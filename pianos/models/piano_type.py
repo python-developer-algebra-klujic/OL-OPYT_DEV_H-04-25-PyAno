@@ -6,3 +6,6 @@ class PianoType(models.Model):
                              null=False,
                              blank=False,
                              help_text='Tip klavira')
+
+    def __str__(self):
+        return f'{self.name}'
