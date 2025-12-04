@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pianos',
     'public_pages',
+    'chords',
 ]
 
 MIDDLEWARE = [
