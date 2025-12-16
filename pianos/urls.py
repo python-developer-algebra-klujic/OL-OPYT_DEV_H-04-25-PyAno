@@ -9,6 +9,7 @@ urlpatterns = [
     # path('/<int:pk>', views.details, name='pianos_details'),
     path('/<int:pk>', views.PianoDetailView.as_view(), name='pianos_details'),
     # path('/create', views.create, name='pianos_create')
-    path('/create', views.PianoCreateView.as_view(), name='pianos_create')
-    path('/update', views.PianoUpdateView.as_view(), name='pianos_update')
+    path('/create', views.PianoCreateView.as_view(), name='pianos_create'),
+    path('/update/<int:pk>', views.PianoUpdateView.as_view(), name='pianos_update'),
+    path('/delete/<int:pk>', views.PianoDeleteView.as_view(), name='pianos_delete')
 ]

@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import (ListView,
+                                  DetailView,
+                                  CreateView,
+                                  UpdateView,
+                                  DeleteView)
 
 from pianos.models.pianos import Piano
 
@@ -43,4 +47,11 @@ class PianoCreateView(CreateView):
 class PianoUpdateView(UpdateView):
     model = Piano
     fields = '__all__'
+
+    template_name_suffix = '_update_form'
+    success_url = reverse_lazy('pianos:pianos_list')
+
+
+class PianoDeleteView(DeleteView):
+    model = Piano
     success_url = reverse_lazy('pianos:pianos_list')
