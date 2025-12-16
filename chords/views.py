@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import (ListView,
+                                  DetailView,
+                                  CreateView,
+                                  UpdateView,
+                                  DeleteView)
 
 from chords.models.chords import Chord
 
@@ -37,4 +41,17 @@ class ChordCreateView(CreateView):
     model = Chord
     fields = '__all__'
 
+    success_url = reverse_lazy('chords:chords_list')
+
+
+class ChordUpdateView(UpdateView):
+    model = Chord
+    fields = '__all__'
+
+    template_name_suffix = '_update_form'
+    success_url = reverse_lazy('chords:chords_list')
+
+
+class ChordDeleteView(DeleteView):
+    model = Chord
     success_url = reverse_lazy('chords:chords_list')

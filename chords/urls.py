@@ -9,5 +9,7 @@ urlpatterns = [
     # path('/<int:pk>', views.details, name='chords_details'),
     path('/<int:pk>', views.ChordDetailView.as_view(), name='chords_details'),
     # path('/create', views.create, name='chords_create')
-    path('/create', views.ChordCreateView.as_view(), name='chords_create')
+    path('/create', views.ChordCreateView.as_view(), name='chords_create'),
+    path('/update/<int:pk>', views.ChordUpdateView.as_view(), name='chords_update'),
+    path('/delete/<int:pk>', views.ChordDeleteView.as_view(), name='chords_delete')
 ]
