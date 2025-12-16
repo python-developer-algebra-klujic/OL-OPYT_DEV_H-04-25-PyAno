@@ -2,7 +2,7 @@
 
 
 {% block page_content %}
-<a href="{% url 'pianos_list' %}" class="btn btn-outline-info">Povratak na listu</a>
+<a href="{% url 'pianos:pianos_list' %}" class="btn btn-outline-info">Povratak na listu</a>
 
 <h1>{{ piano.model }}</h1>
 {% if piano.description %}

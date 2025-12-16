@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.PianoListView.as_view(), name='pianos_list'),
     # path('/<int:pk>', views.details, name='pianos_details'),
     path('/<int:pk>', views.PianoDetailView.as_view(), name='pianos_details'),
-    path('/create', views.create, name='pianos_create')
+    # path('/create', views.create, name='pianos_create')
+    path('/create', views.PianoCreateView.as_view(), name='pianos_create')
 ]
