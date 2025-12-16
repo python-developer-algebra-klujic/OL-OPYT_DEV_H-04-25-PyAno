@@ -10,4 +10,5 @@ urlpatterns = [
     path('/<int:pk>', views.PianoDetailView.as_view(), name='pianos_details'),
     # path('/create', views.create, name='pianos_create')
     path('/create', views.PianoCreateView.as_view(), name='pianos_create')
+    path('/update', views.PianoUpdateView.as_view(), name='pianos_update')
 ]
