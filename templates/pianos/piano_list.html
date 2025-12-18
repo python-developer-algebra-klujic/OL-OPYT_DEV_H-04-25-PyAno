@@ -8,7 +8,7 @@
 {% if pianos %}
     <div class="row">
         {% for piano in pianos %}
-            <div class="col-4">
+            <div class="mb-3 col-4">
                 <div class="card" style="width: 18rem;">
                     {% if piano.picture_url %}
                        <img height=200 src="{{ piano.picture_url }}" class="card-img-top" alt="...">
